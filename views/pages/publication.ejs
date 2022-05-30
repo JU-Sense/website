@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    .list-group-item {
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <%- include('../partials/navbar'); %>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image" style="background-image: url('./img/bg1.jpg'); height: 250px; margin-bottom: 50px">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Publications</h1>
+            <h4 class="mb-3">Book Chapters, Conferences and Journals</h4>
+            <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-3">
+    <div class="container">
+      <% let k=1,d=0; rows.forEach(function (row) { %>
+      <% if (d != row["Year"]) { %>
+
+      <hr />
+      <h2><%= row["Year"] %></h2>
+      <ul class="list-group list-group-light list-group-small">
+        <% k=1; d=row["Year"]; } %>
+        <li class="list-group-item d-flex">
+          <div class="row">
+            <div class="col-12">
+              <div>
+                [<%=k%>] <span class="fw-bold">
+                  <%=row["Title"]%>
+                </span>
+              </div>
+              <div class="text-muted">By <%=row["Authors"]%>
+              </div>
+              <div class="text-muted">In <em>
+                  <%=row['Journal/Conference name']%>
+                </em></div>
+              <% if (row["Type"] == "Journal") { %>
+              <span class="badge rounded-pill badge-light bg-dark"><%=row["Type"]%></span>
+              <% } else if (row["Type"] == "Conference") { %>
+              <span class="badge rounded-pill badge-warning text-dark bg-warning"><%=row["Type"]%></span>
+              <% } else { %>
+              <span class="badge rounded-pill badge-success bg-success"><%=row["Type"]%></span>
+              <% } %>
+
+              <span style="height: 5px"></span>
+              <a href="https://www.doi2bib.org/bib/<%=row['DOI']%>" target="_blank"><span class="badge bg-secondary">bibtex</span></a>
+
+              <a href="<%=row['DOI']%>" target="_blank"><span class="badge bg-info">link</span></a>
+
+              <% if (row['Download link'] != "") { %>
+              <a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">download link</span></a>
+              <% } %>
+            </div>
+          </div>
+        </li>
+        <% k+=1; %>
+      </ul>
+
+      <% }); %>
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!-- Footer -->
+  <%- include('../partials/footer'); %>
+  <!-- Footer -->
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <!-- <script type="text/javascript" src="js/script.js"></script> -->
+</body>
+
+</html>
