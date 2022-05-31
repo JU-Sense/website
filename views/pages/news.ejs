@@ -36,11 +36,12 @@
 
       <!--Section: Content-->
       <section>
+        <% rows.forEach(function(row) { %>
         <!-- Post -->
         <div class="row">
           <div class="col-md-4 mb-4">
             <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+              <img src="<%=row['Cover Image']%>" class="img-fluid" />
               <a href="#!">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
@@ -48,134 +49,29 @@
           </div>
 
           <div class="col-md-8 mb-4">
-            <h5>Very long post title</h5>
+            <h5><%=row['News Heading']%></h5>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ratione
-              necessitatibus itaque error alias repellendus nemo reiciendis aperiam quisquam
-              minus ipsam reprehenderit commodi ducimus, in dicta aliquam eveniet dignissimos
-              magni.
+              <%=row['Description']%>
             </p>
 
             <em>
-              <p class="text-muted">Sarbani Roy</p>
+              <p class=" text-muted"><%=row['Published By'] %></p>
             </em>
 
-            <p class="text-muted">3 Oct, 2018</p>
+            <p class="text-muted"><%=row['Publish Date']%></p>
 
-            <button type="button" class="btn btn-primary">Read</button>
+            <!-- <button type="button" class="btn btn-primary">Read</button> -->
           </div>
         </div>
+        <% }); %>
 
-        <!-- Post -->
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/002.jpg" class="img-fluid" />
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-          </div>
 
-          <div class="col-md-8 mb-4">
-            <h5>Very long post title</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ratione
-              necessitatibus itaque error alias repellendus nemo reiciendis aperiam quisquam
-              minus ipsam reprehenderit commodi ducimus, in dicta aliquam eveniet dignissimos
-              magni.
-            </p>
-
-            <em>
-              <p class="text-muted">Sarbani Roy</p>
-            </em>
-
-            <p class="text-muted">3 Oct, 2018</p>
-
-            <button type="button" class="btn btn-primary">Read</button>
-          </div>
-        </div>
-
-        <!-- Post -->
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-8 mb-4">
-            <h5>Very long post title</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ratione
-              necessitatibus itaque error alias repellendus nemo reiciendis aperiam quisquam
-              minus ipsam reprehenderit commodi ducimus, in dicta aliquam eveniet dignissimos
-              magni.
-            </p>
-
-            <em>
-              <p class="text-muted">Sarbani Roy</p>
-            </em>
-
-            <p class="text-muted">3 Oct, 2018</p>
-
-            <button type="button" class="btn btn-primary">Read</button>
-          </div>
-        </div>
-
-        <!-- Post -->
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-              <a href="#!">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-8 mb-4">
-            <h5>Very long post title</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ratione
-              necessitatibus itaque error alias repellendus nemo reiciendis aperiam quisquam
-              minus ipsam reprehenderit commodi ducimus, in dicta aliquam eveniet dignissimos
-              magni.
-            </p>
-
-            <em>
-              <p class="text-muted">Sarbani Roy</p>
-            </em>
-
-            <p class="text-muted">3 Oct, 2018</p>
-
-            <button type="button" class="btn btn-primary">Read</button>
-          </div>
-        </div>
       </section>
       <!--Section: Content-->
 
 
 
-      <!-- Pagination -->
-      <nav class="my-4" aria-label="...">
-        <ul class="pagination pagination-circle justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
+
     </div>
   </main>
   <!--Main layout-->
@@ -190,7 +86,7 @@
   <!-- Footer -->
 
   <!-- MDB -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type=" text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   <!-- <script type="text/javascript" src="js/script.js"></script> -->
 </body>

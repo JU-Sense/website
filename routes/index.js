@@ -33,8 +33,14 @@ router.get("/", async (req, res) => {
 });
 
 //news page
-router.get("/news", (req, res) => {
-  res.render("pages/news");
+router.get("/news", async (req, res) => {
+  let doc = await config();
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[4];
+
+  // read rows
+  const rows = await sheet.getRows(); // can pass in { limit, offset }
+  res.render("pages/news", { rows: rows });
 });
 
 //dataset page
