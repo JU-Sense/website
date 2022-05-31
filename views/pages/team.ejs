@@ -37,157 +37,215 @@
       <!--Section: Content-->
       <section class="text-center">
         <h4 class="mb-5"><strong>Team Head</strong></h4>
-        <h4 class="mb-5"><strong>Undergraduate Students</strong></h4>
-        <h4 class="mb-5"><strong>Postgraduate Students</strong></h4>
+
+        <div class="row justify-content-center">
+          <% rows.forEach(function(row) { %>
+          <% if (row['Designation'] == "Team Head") { %>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light" style="height: 350px; vertical-align: middle; align-self: center;">
+                <img src="<%=row['Photo link']%>" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%=row["Name"]%></h5>
+                <div class="h3 container mt-3 " style="vertical-align: middle;">
+                  <% if (row['Google scholar'] != "") { %>
+                  <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                  <% } if (row['Linkedin'] != "") { %>
+                  <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                  <% } if (row['ResearchGate'] != "") { %>
+                  <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                  <% } if (row['personal website'] != "") { %>
+                  <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <% }); %>
+
+        </div>
+
         <h4 class="mb-5"><strong>Ph.D. Students</strong></h4>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
+        <div class="row justify-content-center">
+          <% rows.forEach(function(row) { %>
+          <% if (row['Designation'] == "PhD") { %>
+          <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+              <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light" style="height: 350px; vertical-align: middle; align-self: center;">
+                <img src="<%=row['Photo link']%>" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
+                <h5 class="card-title"><%=row["Name"]%></h5>
+                <div class="h3 container mt-3 " style="vertical-align: middle;">
+                  <% if (row['Google scholar'] != "") { %>
+                  <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                  <% } if (row['Linkedin'] != "") { %>
+                  <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                  <% } if (row['ResearchGate'] != "") { %>
+                  <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                  <% } if (row['personal website'] != "") { %>
+                  <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                  <% } %>
+                </div>
               </div>
             </div>
           </div>
+          <% } %>
+          <% }); %>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/002.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
-              </div>
-            </div>
-          </div>
+        <h4 class="mb-5"><strong>Project Fellow</strong></h4>
 
-          <div class="col-lg-4 col-md-6 mb-4">
+        <div class="row justify-content-center">
+          <% rows.forEach(function(row) { %>
+          <% if (row['Designation'] == "Project Fellow") { %>
+          <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/022.jpg" class="img-fluid" />
+              <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light" style="height: 350px; vertical-align: middle; align-self: center;">
+                <img src="<%=row['Photo link']%>" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
+                <h5 class="card-title"><%=row["Name"]%></h5>
+                <div class="h3 container mt-3 " style="vertical-align: middle;">
+                  <% if (row['Google scholar'] != "") { %>
+                  <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                  <% } if (row['Linkedin'] != "") { %>
+                  <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                  <% } if (row['ResearchGate'] != "") { %>
+                  <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                  <% } if (row['personal website'] != "") { %>
+                  <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                  <% } %>
+                </div>
               </div>
             </div>
           </div>
+          <% } %>
+          <% }); %>
 
-          <div class="col-lg-4 col-md-6 mb-4">
+        </div>
+
+        <h4 class="mb-5"><strong>Postgraduate Students</strong></h4>
+
+        <div class="row justify-content-center">
+          <% rows.forEach(function(row) { %>
+          <% if (row['Designation'] == "PG") { %>
+          <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/standard/nature/035.jpg" class="img-fluid" />
+              <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light" style="height: 350px; vertical-align: middle; align-self: center;">
+                <img src="<%=row['Photo link']%>" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </p>
-                <a href="#!" class="btn btn-primary">Read</a>
+                <h5 class="card-title"><%=row["Name"]%></h5>
+                <div class="h3 container mt-3 " style="vertical-align: middle;">
+                  <% if (row['Google scholar'] != "") { %>
+                  <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                  <% } if (row['Linkedin'] != "") { %>
+                  <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                  <% } if (row['ResearchGate'] != "") { %>
+                  <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                  <% } if (row['personal website'] != "") { %>
+                  <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                  <% } %>
+                </div>
               </div>
             </div>
           </div>
+          <% } %>
+          <% }); %>
+
+        </div>
+
+        <h4 class="mb-5"><strong>Undergraduate Students</strong></h4>
+
+        <div class="row justify-content-center">
+          <% rows.forEach(function(row) { %>
+          <% if (row['Designation'] == "UG") { %>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light" style="height: 350px; vertical-align: middle; align-self: center;">
+                <img src="<%=row['Photo link']%>" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%=row["Name"]%></h5>
+                <div class="h3 container mt-3 " style="vertical-align: middle;">
+                  <% if (row['Google scholar'] != "") { %>
+                  <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                  <% } if (row['Linkedin'] != "") { %>
+                  <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                  <% } if (row['ResearchGate'] != "") { %>
+                  <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                  <% } if (row['personal website'] != "") { %>
+                  <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <% }); %>
+
+        </div>
+
+        <h4 class="mb-5"><strong>Others</strong></h4>
+
+        <div class="row justify-content-center">
+          <% rows.forEach(function(row) { %>
+          <% if (row['Designation'] == "Other") { %>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light" style="height: 350px; vertical-align: middle; align-self: center;">
+                <img src="<%=row['Photo link']%>" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%=row["Name"]%></h5>
+                <div class="h3 container mt-3 " style="vertical-align: middle;">
+                  <% if (row['Google scholar'] != "") { %>
+                  <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                  <% } if (row['Linkedin'] != "") { %>
+                  <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                  <% } if (row['ResearchGate'] != "") { %>
+                  <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                  <% } if (row['personal website'] != "") { %>
+                  <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <% }); %>
+
         </div>
       </section>
-      <!--Section: Content-->
-
-      <!-- Pagination -->
-      <nav class="my-4" aria-label="...">
-        <ul class="pagination pagination-circle justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </main>
   <!--Main layout-->
 
-
-  </div>
-  </main>
-  <!--Main layout-->
-
   <!-- Footer -->
-  <%- include('../partials/navbar'); %>
+  <%- include('../partials/footer'); %>
   <!-- Footer -->
   <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>

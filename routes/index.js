@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 async function config() {
-  console.log(process.env.CLIENT_EMAIL);
+  // console.log(process.env.CLIENT_EMAIL);
   const { GoogleSpreadsheet } = require("google-spreadsheet");
   // const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID);
   const doc = new GoogleSpreadsheet(
@@ -44,6 +44,7 @@ router.get("/dataset", (req, res) => {
 
 //publication page
 router.get("/publication", async (req, res) => {
+  // console.time();
   let doc = await config();
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
@@ -64,11 +65,13 @@ router.get("/publication", async (req, res) => {
   // console.log("---------------------------------------------");
   //   }
 
+  // console.timeEnd();
   res.render("pages/publication", { rows: rows });
 });
 
 //research page
 router.get("/research", async (req, res) => {
+  // console.time();
   let doc = await config();
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[3];
@@ -76,12 +79,19 @@ router.get("/research", async (req, res) => {
   // read rows
   const rows = await sheet.getRows(); // can pass in { limit, offset }
 
+  // console.timeEnd();
   res.render("pages/research", { rows: rows });
 });
 
 //team page
-router.get("/team", (req, res) => {
-  res.render("pages/team");
+router.get("/team", async (req, res) => {
+  let doc = await config();
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[1];
+
+  // read rows
+  const rows = await sheet.getRows(); // can pass in { limit, offset }
+  res.render("pages/team", { rows: rows });
 });
 
 //contact page

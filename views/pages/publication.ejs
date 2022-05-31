@@ -67,10 +67,35 @@
               <span style="height: 5px"></span>
               <a href="https://www.doi2bib.org/bib/<%=row['DOI']%>" target="_blank"><span class="badge bg-secondary">bibtex</span></a>
 
-              <a href="<%=row['DOI']%>" target="_blank"><span class="badge bg-info">link</span></a>
+              <!-- <a href="<%=row['DOI']%>" target="_blank"><span class="badge bg-info">DOI link</span></a> -->
 
-              <% if (row['Download link'] != "") { %>
-              <a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">download link</span></a>
+              <% if (row['Download link'] != null && row['Download link'] != "") { %>
+              <a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">Download</span></a>
+              <% } %>
+
+              <% if (row['Abstract'] != null) {%>
+              <a href="" data-mdb-toggle="modal" data-mdb-target="#modal<%=k%>"><span class="badge bg-primary">Abstract</span></a>
+
+              <div class="modal fade" id="modal<%=k%>" tabindex="-1" aria-labelledby="modal<%=k%>Label" aria-hidden="true" style="z-index: 4000;">
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal<%=k%>Label"><%=row["Title"]%></h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-lg-start">
+                      <!-- <h5>Description</h5> -->
+                      <p>
+                        <%=row["Abstract"]%>
+                      </p>
+                      <span><b>Authors:</b> <%=row["Authors"]%></span><br />
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <% } %>
             </div>
           </div>
