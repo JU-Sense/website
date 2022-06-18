@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    .areas-interest {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <%- include('../partials/navbar'); %>
+    <!-- Navbar -->
+
+
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image" style="background-image: url('/img/bg1.jpg'); height: 35vh; margin-bottom: 50px;">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="row d-flex justify-content-center align-items-center h-100 text-white">
+          <!-- <div class="row text-white"> -->
+
+          <div class="col">
+            <h1 class="mb-3"><%=row['Name']%></h1>
+            <h4 class="mb-3"><%=row['Designation']%></h4>
+            <!-- <h5><span class="badge bg-secondary">sarbani.roy@jadavpuruniversity.in</span></h5> -->
+          </div>
+          <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a> -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+
+  </header>
+
+  <!--Main layout-->
+  <main class="my-5">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-3 text-center">
+          <img src="<%=row['Photo link']%>" style="border-radius: 50%; height: 200px; margin-bottom: 30px;">
+          <h5 style="font-weight: bold; margin-top: 20px;"><span class="badge bg-dark text-white">Areas of interest</span></h5>
+          <p>
+            <% row['Areas of interest'].split(",").forEach(function(interest) { %> <%=interest%> <br> <% }); %> </p>
+        </div>
+        <div class="col-6" style="text-align: justify; border-right: 0.5px solid grey; padding-right: 30px;">
+          <p><%=row['About me']%></p>
+        </div>
+        <div class="col-3">
+          <!-- <ul>
+            <h6 style="font-weight: bold;">Areas of interest</h6>
+            <p>AI for Social Good<br>IoT-Cloud<br>Social Network Analysis<br>Geoinformatics</p>
+            <hr>
+          </ul> -->
+          <hr>
+
+          <ul>
+            <!-- <li> -->
+            <p>
+              <a style="color: rgb(0, 102, 255)" href="mailto:sarbani.roy@jadavpuruniversity.in"><i class="fas fa-envelope m-2"></i> Email</a>
+            </p>
+            <% if (row['GitHub'] != "") { %>
+            <p>
+              <a style="color: rgb(0, 102, 255)" href="<%=row['GitHub']%>"><i class="fab fa-github m-2"></i> GitHub</a>
+            </p>
+            <% } %>
+
+            <% if (row['ResearchGate'] != "") { %>
+            <p>
+              <a style="color: rgb(0, 102, 255)" href="<%=row['ResearchGate']%>"><i class="fab fa-researchgate m-2"></i> ResearchGate</a>
+            </p>
+            <% } %>
+
+            <% if (row['Google scholar'] != "") { %>
+            <p>
+              <a style="color: rgb(0, 102, 255)" href="<%=row['Google scholar']%>"><i class="far fa-user m-2"></i> Google Scholar</a>
+            </p>
+            <% } %>
+
+            <% if (row['LinkedIn'] != "") { %>
+            <p>
+              <a style="color: rgb(0, 102, 255)" href="<%=row['LinkedIn']%>"><i class="fab fa-linkedin m-2"></i> LinkedIn</a>
+            </p>
+            <% } %>
+
+            <% if (row['personal website'] != "") { %>
+            <p>
+              <a style="color: rgb(0, 102, 255)" href="<%=row['personal website']%>"><i class="far fa-user m-2"></i> Personal Website</a><br>
+            </p>
+            <% } %>
+            <!-- </li> -->
+          </ul>
+
+          <br>
+          <br>
+
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+
+  </div>
+  </main>
+  <!--Main layout-->
+
+  <!-- Footer -->
+  <%- include('../partials/footer'); %>
+  <!-- Footer -->
+
+  <!-- MDB -->
+  <script type=" text/javascript" src="js/mdb.min.js"></script>
+
+  <script>
+
+  </script>
+
+  <!-- Custom scripts -->
+  <!-- <script type="text/javascript" src="js/script.js"></script> -->
+</body>
+
+</html>

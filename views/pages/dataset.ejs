@@ -41,106 +41,32 @@
         <!-- <h4 class="mb-5"><strong>In the Spotlight</strong></h4> -->
 
         <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-            <a href="https://google.com">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="img/img1.png" class="img-fluid" style="padding: 30px;" />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">A Novel Fuzzy-based Missing Value Imputation Technique for
-                    Air
-                    Pollution Data
-                  </h5>
-                  <!-- <hr> -->
-                  <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
-                    Analysis and prediction on real time air quality data is a critical step in
-                    solving
-                    various
-                    problems related to pollution and finding a genuine solution. However, missing
-                    values in
-                    air
-                    pollution data is a serious issue that may greatly influence the performance of
-                    such
-                    analysis and
-                    prediction.
-                  </p>
-                  <br>
-                  <a href="#!" class="btn btn-primary">Download</a>
-                  <a href="#!" class="btn btn-secondary">Explore</a>
-                </div>
-                <div class="card-footer text-muted">Released: 20 April, 2018</div>
-              </div>
-            </a>
-          </div>
+
+          <% let k=1; 
+          rows.forEach(function(row) { %>
 
           <div class="col-lg-4 col-md-12 mb-4">
-            <a href="https://google.com">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="img/img1.png" class="img-fluid" style="padding: 30px;" />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">A Novel Fuzzy-based Missing Value Imputation Technique for
-                    Air
-                    Pollution Data
-                  </h5>
-                  <!-- <hr> -->
-                  <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
-                    Analysis and prediction on real time air quality data is a critical step in
-                    solving
-                    various
-                    problems related to pollution and finding a genuine solution. However, missing
-                    values in
-                    air
-                    pollution data is a serious issue that may greatly influence the performance of
-                    such
-                    analysis and
-                    prediction.
-                  </p>
-                  <br>
-                  <a href="#!" class="btn btn-primary">Download</a>
-                  <a href="#!" class="btn btn-secondary">Explore</a>
-                  <!-- <a href="#!" class="btn btn-primary">Button</a> -->
-                </div>
-                <div class="card-footer text-muted">Released: 20 April, 2018</div>
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="<%=row['Image']%>" class="img-fluid" style="padding: 30px;" />
               </div>
-            </a>
+              <div class="card-body">
+                <h5 class="card-title"><%=row['Dataset name']%>
+                </h5>
+                <!-- <hr> -->
+                <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+                  <%=row['Description']%>
+                </p>
+                <br>
+                <a href="#!" class="btn btn-primary">Download</a>
+                <a href="#!" class="btn btn-secondary">Explore</a>
+              </div>
+              <div class="card-footer text-muted">Released: <%=row['Release date']%></div>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-12 mb-4">
-            <a href="https://google.com">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="img/img1.png" class="img-fluid" style="padding: 30px;" />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">A Novel Fuzzy-based Missing Value Imputation Technique for
-                    Air
-                    Pollution Data
-                  </h5>
-                  <!-- <hr> -->
-                  <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
-                    Analysis and prediction on real time air quality data is a critical step in
-                    solving
-                    various
-                    problems related to pollution and finding a genuine solution. However, missing
-                    values in
-                    air
-                    pollution data is a serious issue that may greatly influence the performance of
-                    such
-                    analysis and
-                    prediction.
-                  </p>
-                  <br>
-                  <a href="#!" class="btn btn-primary">Download</a>
-                  <a href="#!" class="btn btn-secondary">Explore</a>
-                  <!-- <a href="#!" class="btn btn-primary">Button</a> -->
-                </div>
-                <div class="card-footer text-muted">Released: 20 April, 2018</div>
-              </div>
-            </a>
-          </div>
+          <% k+=1; }); %>
+
         </div>
       </section>
       <!--Section: Content-->

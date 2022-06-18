@@ -43,9 +43,33 @@ router.get("/news", async (req, res) => {
   res.render("pages/news", { rows: rows });
 });
 
+//profile page
+router.get("/users/:userid", async (req, res) => {
+  let doc = await config();
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[1];
+
+  // read rows
+  const rows = await sheet.getRows();
+
+  rows.forEach((row) => {
+    if (row["UserID"] == req.params["userid"]) {
+      res.render("pages/profile", { row: row });
+    }
+  });
+});
+
 //dataset page
-router.get("/dataset", (req, res) => {
-  res.render("pages/dataset");
+router.get("/dataset", async (req, res) => {
+  let doc = await config();
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[2];
+
+  // read rows
+  const rows = await sheet.getRows(); // can pass in { limit, offset }
+
+  // console.timeEnd();
+  res.render("pages/dataset", { rows: rows });
 });
 
 //publication page
