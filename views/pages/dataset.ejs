@@ -58,8 +58,7 @@
                   <%=row['Description']%>
                 </p>
                 <br>
-                <a href="#!" class="btn btn-primary">Download</a>
-                <a href="#!" class="btn btn-secondary">Explore</a>
+                <a href="#" data-mdb-toggle="modal" data-mdb-target="#modal<%=k%>" class="btn btn-primary">Explore</a>
               </div>
               <div class="card-footer text-muted">Released: <%=row['Release date']%></div>
             </div>
@@ -68,6 +67,48 @@
           <% k+=1; }); %>
 
         </div>
+
+        <% k=1; 
+        rows.forEach(function(row) { %>
+
+        <div class="modal fade" id="modal<%=k%>" tabindex="-1" aria-labelledby="modal<%=k%>Label" aria-hidden="true" style="z-index: 4000;">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal<%=k%>Label"><%=row["Dataset name"]%></h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-lg-start">
+                <!-- <h5>Description</h5> -->
+                <p>
+                  <strong>Description: </strong><%=row["Description"]%>
+                </p>
+                <span><b>Released:</b> <%=row['Release date']%></span><br />
+                <hr>
+                <p>
+                  Access to the dataset is based on an End-User License Agreement. The use of the dataset is strictly restricted to non-commercial research. Please provide us the following information about the authorized signatory (MUST hold a permanent position):
+                <ul>
+                  <li>Full name</li>
+                  <li>Name of organization</li>
+                  <li>Position / job title</li>
+                  <li>Academic / professional email address</li>
+                  <li>How will this dataset benefit your research work?</li>
+                </ul>
+
+                </p>
+                <p>
+                  To request access to the dataset, kindly drop an email to <a class="text-decoration-none text-decoration-underline" href="mailto:jusenseresearch@gmail.com">jusenseresearch@gmail.com</a> with the mentioned information from your official/academic email ID with the subject: Dataset Request
+                </p>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% k+=1; }); %>
+
       </section>
       <!--Section: Content-->
 

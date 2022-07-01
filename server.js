@@ -11,6 +11,7 @@ app.use(express.static(__dirname + "/views"));
 
 //Routes
 app.use("/", require("./routes/index"));
+app.use("/dataset", require("./routes/dataset"));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

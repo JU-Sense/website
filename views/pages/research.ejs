@@ -112,6 +112,18 @@
   <!-- Custom scripts -->
   <!-- <script type="text/javascript" src="js/script.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  <script>
+    window.onload = async function() {
+      const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+      await delay(100);
+      if (window.localStorage) {
+        if (!localStorage.getItem("firstLoad")) {
+          localStorage["firstLoad"] = true;
+          window.location.reload();
+        } else localStorage.removeItem("firstLoad");
+      }
+    };
+  </script>
 </body>
 
 </html>
