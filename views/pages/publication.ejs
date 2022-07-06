@@ -63,7 +63,7 @@
 								<% if (row['Download link'] != null && row['Download link'] != "") { %>
 								<a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">Download</span></a>
 								<% } %> <% if (row['Abstract'] != null) {%>
-								<a href="" data-mdb-toggle="modal" data-mdb-target="#modal<%=k%>"><span class="badge bg-primary">Abstract</span></a>
+								<a href="#" title="View Abstract" data-mdb-toggle="modal" data-mdb-target="#modal<%=k%>"><span class="badge bg-primary">Abstract</span></a>
 
 								<div class="modal fade" id="modal<%=k%>" tabindex="-1" aria-labelledby="modal<%=k%>Label" aria-hidden="true" style="z-index: 4000">
 									<div class="modal-dialog modal-xl">
