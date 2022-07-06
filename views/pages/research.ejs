@@ -85,25 +85,31 @@
                 <!-- <span><b>Initiated on:</b> <%=row["Date"]%></span><br /> -->
                 <hr>
                 <h4>Publications</h4>
+                <ul class="list-group list-group-light list-group-small">
                 <% let i = 0; publications.forEach((publication) => { 
                   if (publication["Research area"].split(', ').includes(row["Research problem"])){ i = i + 1; %>
-                <div>[<%=i%>] <span class="fw-bold"> <%=publication["Title"]%> </span></div>
-								<div class="text-muted">By <%=publication["Authors"]%></div>
-								<div class="text-muted">In <em> <%=publication['Journal/Conference name']%> </em></div>
-								<% if (publication["Type"] == "Journal") { %>
-								<span class="badge rounded-pill badge-light bg-dark"><%=publication["Type"]%></span>
-								<% } else if (publication["Type"] == "Conference") { %>
-								<span class="badge rounded-pill badge-warning text-dark bg-warning"><%=publication["Type"]%></span>
-								<% } else { %>
-								<span class="badge rounded-pill badge-success bg-success"><%=publication["Type"]%></span>
-								<% } %>
-								<span style="height: 5px"></span>
-								<a href="https://www.doi2bib.org/bib/<%=publication['DOI']%>" target="_blank"><span class="badge bg-secondary">bibtex</span></a>
-								<% if (publication['Download link'] != null && publication['Download link'] != "") { %>
-								<a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">Download</span></a>
-                <% }%>
-                <br>
-                <br>
+                      <li class="list-group-item d-flex border-0">
+                        <div class="row">
+                          <div class="col-12">
+                        <div>[<%=i%>] <span class="fw-bold"> <%=publication["Title"]%> </span></div>
+                        <div class="text-muted">By <%=publication["Authors"]%></div>
+                        <div class="text-muted">In <em> <%=publication['Journal/Conference name']%> </em></div>
+                        <% if (publication["Type"] == "Journal") { %>
+                        <span class="badge rounded-pill badge-light bg-dark"><%=publication["Type"]%></span>
+                        <% } else if (publication["Type"] == "Conference") { %>
+                        <span class="badge rounded-pill badge-warning text-dark bg-warning"><%=publication["Type"]%></span>
+                        <% } else { %>
+                        <span class="badge rounded-pill badge-success bg-success"><%=publication["Type"]%></span>
+                        <% } %>
+                        <span style="height: 5px"></span>
+                        <a href="https://www.doi2bib.org/bib/<%=publication['DOI']%>" target="_blank"><span class="badge bg-secondary">bibtex</span></a>
+                        <% if (publication['Download link'] != null && publication['Download link'] != "") { %>
+                        <a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">Download</span></a>
+                        <% }%>
+                          </div>
+                          </div>
+                      </li>
+                    </ul>
               <%}}) %>
               </div>
               <div class="modal-footer">
