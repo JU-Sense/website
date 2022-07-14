@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head'); %>
+		<style>
+			.list-group-item {
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--Main Navigation-->
+		<header>
+			<!-- Navbar -->
+			<%- include('../partials/navbar'); %>
+			<!-- Navbar -->
+
+			<!-- Background image -->
+			<div class="p-5 text-center bg-image" style="background-image: url('./img/bg1.jpg'); height: 250px; margin-bottom: 50px">
+				<div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+					<div class="d-flex justify-content-center align-items-center h-100">
+						<div class="text-white">
+							<h1 class="mb-3">Funded Projects</h1>
+							<!-- <h4 class="mb-3"></h4> -->
+							<!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Background image -->
+		</header>
+		<!--Main Navigation-->
+
+		<!--Main layout-->
+		<main class="mt-3">
+			<div class="container">
+				<% let k=1,d=0; rows.forEach(function (row) { %> <% if (d != row["Status"]) { %>
+
+				<hr />
+				<h2><%= row["Status"] %></h2>
+				<ul class="list-group list-group-light list-group-small">
+					<% d=row["Status"]; } %>
+					<li class="list-group-item d-flex">
+						<div class="row">
+							<div class="col-12">
+								<div>[<%=k%>] <span class="fw-bold"> <%=row["Title"]%> </span></div>
+								<div>Principal Investigator (PI): <em><%=row["PI"]%></em></div>
+								<% if (row["Co-PI"] && row["Co-PI"].length > 0) { %>
+								<div>Co-PI: <em><%=row["Co-PI"]%></em></div>
+								<% }%>
+								<div class="text-muted">Funding Agency: <%=row["Funding Agency"]%></div>
+								<div class="text-muted">Cost (INR): <%=row["Cost"]%></div>
+								<div class="text-muted">Duration: <%=row["Duration"]%></div>
+								<!-- <span style="height: 5px"></span>
+								<a href="https://www.doi2bib.org/bib/<%=row['DOI']%>" target="_blank"><span class="badge bg-secondary">bibtex</span></a> -->
+
+								<!-- <a href="<%=row['DOI']%>" target="_blank"><span class="badge bg-info">DOI link</span></a> -->
+
+								<!-- <% if (row['Download link'] != null && row['Download link'] != "") { %>
+								<a href="<%=row['Download link']%>" target="_blank"><span class="badge bg-danger">Download</span></a>
+								<% } %> <% if (row['Abstract'] != null) {%>
+								<a href="#" title="View Abstract" data-mdb-toggle="modal" data-mdb-target="#modal<%=k%>"><span class="badge bg-primary">Abstract</span></a>
+								<% } %> -->
+							</div>
+						</div>
+					</li>
+					<% k+=1; %>
+				</ul>
+
+				<% }); %>
+				<hr />
+			</div>
+		</main>
+		<!--Main layout-->
+
+		<!-- Footer -->
+		<%- include('../partials/footer'); %>
+		<!-- Footer -->
+
+		<!-- MDB -->
+		<script type="text/javascript" src="js/mdb.min.js"></script>
+		<!-- Custom scripts -->
+		<!-- <script type="text/javascript" src="js/script.js"></script> -->
+	</body>
+</html>

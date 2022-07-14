@@ -115,6 +115,17 @@ router.get("/research", async (req, res) => {
 	res.render("pages/research", { rows: rows, publications: rows2 });
 });
 
+// Funded-Projects page
+router.get("/funded-projects", async (req, res) => {
+	let doc = await config();
+	await doc.loadInfo();
+	const sheet = doc.sheetsByIndex[5];
+
+	// read rows
+	const rows = await sheet.getRows(); // can pass in { limit, offset }
+	res.render("pages/funded_projects", { rows: rows });
+});
+
 //team page
 router.get("/team", async (req, res) => {
 	let doc = await config();
