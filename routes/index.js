@@ -22,7 +22,7 @@ async function config() {
 router.get("/", async (req, res) => {
 	let doc = await config();
 	await doc.loadInfo();
-	const sheet = doc.sheetsByIndex[3];
+	const sheet = doc.sheetsByIndex[4];
 
 	// read rows
 	const rows = await sheet.getRows(); // can pass in { limit, offset }

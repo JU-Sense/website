@@ -37,7 +37,7 @@
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
               <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white text-center">
-                  <h1 class="mb-3">Enriching lives around the World with AI</h1>
+                  <h1 class="mb-3">Enriching lives around the World with AI & ICT</h1>
                   <h5 class="mb-4">#AIForSocialGood</h5>
                   <a class="btn btn-outline-light btn-lg m-2" href="/research" role="button" rel="nofollow" target="_blank">Explore our Research</a>
                   <a class="btn btn-outline-light btn-lg m-2" href="/team" target="_blank" role="button">Meet our Team</a>
@@ -132,15 +132,22 @@
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modal<%=i%>Label"><%=rows[i]["Research problem"]%></h5>
+                  <h5 class="modal-title" id="modal<%=i%>Label"><%=rows[i]["News Heading"]%></h5>
                   <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-lg-start">
                   <!-- <h5>Description</h5> -->
                   <p><%=rows[i]["Description"]%></p>
-                  <span><b>Initiated on:</b> <%=rows[i]["Date"]%></span><br />
-                </div>
+                  <em>
+                  <p class="text-muted">By <%=rows[i]['Published By'] %></p>
+                </em>
+                
+                <p class="text-muted"><%=rows[i]['Publish Date']%></p>
+              </div>
+
+                <!-- <button type="button" class="btn btn-primary">Read</button> -->
                 <div class="modal-footer">
+                  <a href="<%=rows[i]['Link']%>" target="_blank"><button type="button" class="btn btn-primary">Explore More</button></a>
                   <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
                 </div>
               </div>
@@ -151,11 +158,11 @@
             <a href="" data-mdb-toggle="modal" data-mdb-target="#modal<%=i%>">
               <div class="card">
                 <div class="bg-image hover-overlay ripple d-flex" data-mdb-ripple-color="light">
-                  <img src="<%=rows[i]['Image link']%>" class="img-fluid" style="padding: 10px" />
+                  <img src="<%=rows[i]['Cover Image']%>" class="img-fluid" style="padding: 10px" />
                 </div>
                 <div class="card-body">
                   <h5 class="card-title" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis">
-                    <%=rows[i]["Research problem"]%>
+                    <%=rows[i]["News Heading"]%>
                   </h5>
                   <!-- <hr> -->
                   <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis">

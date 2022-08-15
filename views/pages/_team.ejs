@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head'); %>
+	</head>
+
+	<body>
+		<!--Main Navigation-->
+		<header>
+			<!-- Navbar -->
+			<%- include('../partials/navbar'); %>
+			<!-- Navbar -->
+
+			<!-- Background image -->
+			<div class="p-5 text-center bg-image" style="background-image: url('./img/bg1.jPostGraduate Student'); height: 200px; margin-bottom: 50px">
+				<div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
+					<div class="d-flex justify-content-center align-items-center h-100">
+						<div class="text-white">
+							<h1 class="mb-3">Team</h1>
+							<h4 class="mb-3">Meet our Team</h4>
+							<!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Background image -->
+		</header>
+
+		<!--Main layout-->
+		<main class="my-5">
+			<div class="container">
+				<!-- Tabs navs -->
+				<ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
+					<li class="nav-item" role="presentation">
+						<a class="nav-link active" id="ex2-tab-1" data-mdb-toggle="tab" href="#ex2-tabs-1" role="tab" aria-controls="ex2-tabs-1" aria-selected="true"
+							>Current Members</a
+						>
+					</li>
+					<li class="nav-item" role="presentation">
+						<a class="nav-link" id="ex2-tab-2" data-mdb-toggle="tab" href="#ex2-tabs-2" role="tab" aria-controls="ex2-tabs-2" aria-selected="false">Alumni</a>
+					</li>
+				</ul>
+				<!-- Tabs navs -->
+
+				<!-- Tabs content -->
+				<div class="tab-content" id="ex2-content">
+					<div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel" aria-labelledby="ex2-tab-1">
+						<!--Section: Current Members Content-->
+						<section class="text-center">
+							<h4 class="mb-5"><strong>Supervisor</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Supervisor" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                      <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                      <% } if (row['ResearchGate'] != "") { %>
+                      <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                      <% } if (row['personal website'] != "") { %>
+                      <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                      <% } %>
+                    </div> -->
+												<!-- <a href="#" class="btn btn-primary">View Profile</a> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Ph.D. Students</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Ph.D. Student" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                      <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                      <% } if (row['ResearchGate'] != "") { %>
+                      <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                      <% } if (row['personal website'] != "") { %>
+                      <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                      <% } %>
+                    </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Project Fellow</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Project Fellow" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                        <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                      <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                      <% } if (row['ResearchGate'] != "") { %>
+                      <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                      <% } if (row['personal website'] != "") { %>
+                      <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                      <% } %>
+                    </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Postgraduate Students</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "PostGraduate Student" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                        <% if (row['Google scholar'] != "") { %>
+                          <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                          <% } if (row['Linkedin'] != "") { %>
+                            <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                            <% } if (row['ResearchGate'] != "") { %>
+                              <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                              <% } if (row['personal website'] != "") { %>
+                                <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                                <% } %>
+                    </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Undergraduate Students</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "UnderGraduate Student" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                          <% } if (row['personal website'] != "") { %>
+                            <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                            <% } %>
+                          </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Others</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Other" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                          <% } if (row['personal website'] != "") { %>
+                            <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                            <% } %>
+                          </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+						</section>
+					</div>
+					<div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+						<!--Section: Alumni Members Content-->
+						<section class="text-center">
+							<!-- <h4 class="mb-5"><strong>Supervisor</strong></h4> -->
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Supervisor" && row['Member Type'] == "Alumni") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                          <% } if (row['personal website'] != "") { %>
+                            <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                            <% } %>
+                          </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Ph.D. Students</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Ph.D. Student" && row['Member Type'] == "Alumni") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                          <% } if (row['personal website'] != "") { %>
+                            <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                            <% } %>
+                          </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Project Fellow</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Project Fellow" && row['Member Type'] == "Alumni") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                          <% } if (row['personal website'] != "") { %>
+                            <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                            <% } %>
+                          </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Postgraduate Students</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "PostGraduate Student" && row['Member Type'] == "Alumni") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                          <% } if (row['personal website'] != "") { %>
+                            <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                            <% } %>
+                          </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Undergraduate Students</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "UnderGraduate Student" && row['Member Type'] == "Alumni") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                        <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                        <% } if (row['ResearchGate'] != "") { %>
+                          <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                      <% } if (row['personal website'] != "") { %>
+                        <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                        <% } %>
+                      </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Others</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Other" && row['Member Type'] == "Alumni") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+												<!-- <div class="h3 container mt-3 " style="vertical-align: middle;">
+                      <% if (row['Google scholar'] != "") { %>
+                      <a href="<%=row['Google scholar']%>" target="_blank"><i class="ai ai-google-scholar-square ai-1x"></i></a>
+                      <% } if (row['Linkedin'] != "") { %>
+                      <a href="<%=row['Linkedin']%>" target="_blank"><i class="fab fa-linkedin m-2"></i></a>
+                      <% } if (row['ResearchGate'] != "") { %>
+                        <a href="<%=row['ResearchGate']%>" target="_blank"><i class="fab fa-researchgate m-2"></i></a>
+                      <% } if (row['personal website'] != "") { %>
+                      <a href="<%=row['personal website']%>" target="_blank"><i class="far fa-user m-2"></i></a>
+                      <% } %>
+                    </div> -->
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!-- Tabs content -->
+			</div>
+		</main>
+		<!--Main layout-->
+
+		<!-- Footer -->
+		<%- include('../partials/footer'); %>
+		<!-- Footer -->
+		<!-- MDB -->
+		<script type="text/javascript" src="js/mdb.min.js"></script>
+		<!-- Custom scripts -->
+		<!-- <script type="text/javascript" src="js/script.js"></script> -->
+	</body>
+</html>
