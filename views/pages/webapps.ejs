@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <%- include('../partials/navbar'); %>
+    <!-- Navbar -->
+
+
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image" style="background-image: url('./img/bg1.jpg'); height: 250px; margin-bottom: 50px;">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Web Applications</h1>
+            <h4 class="mb-3">Created by JUSense</h4>
+            <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+
+
+  </header>
+
+  <!--Main layout-->
+  <main class="my-5">
+    <div class="container">
+
+      <!--Section: Content-->
+      <section>
+        <% rows.forEach(function(row) { %>
+        <!-- Post -->
+        <div class="card shadow-1-strong mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 mb-1">
+                <div class="bg-image hover-overlay rounded ripple" data-mdb-ripple-color="light">
+                  <img src="<%=row['Cover Image']%>" class="img-fluid" />
+                  <!-- <a href="#!"> -->
+                    <!-- <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div> -->
+                  <!-- </a> -->
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-1">
+                <h5><%=row['Web Apps Heading']%></h5>
+                <p>
+                  <%=row['Description']%>
+                </p>
+
+                <em>
+                  <p class="text-muted">By <%=row['Published By'] %></p>
+                </em>
+
+                <p class="text-muted"><%=row['Publish Date']%></p>
+
+                <!-- <button type="button" class="btn btn-primary">Read</button> -->
+                <div class="d-flex justify-content-end">
+                  <a href="<%=row['Link']%>" target="_blank"><button type="button" class="btn btn-secondary">Explore More</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+
+
+      </section>
+      <!--Section: Content-->
+
+
+
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+
+  </div>
+  </main>
+  <!--Main layout-->
+
+  <!-- Footer -->
+  <%- include('../partials/footer'); %>
+  <!-- Footer -->
+
+  <!-- MDB -->
+  <script type=" text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <!-- <script type="text/javascript" src="js/script.js"></script> -->
+</body>
+
+</html>
