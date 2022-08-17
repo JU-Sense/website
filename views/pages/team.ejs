@@ -66,10 +66,34 @@
 								<% } %> <% }); %>
 							</div>
 
-							<h4 class="mb-5"><strong>Ph.D. Students</strong></h4>
+							<h4 class="mb-5"><strong>Ph.D. Students (Ongoing)</strong></h4>
 
 							<div class="row justify-content-center">
-								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Ph.D. Student") { %>
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Ph.D. Student" && row['Member Type'] == "Current") { %>
+								<div class="col-lg-2 col-md-4 mb-4">
+									<a href="/users/<%=row['UserID']%>">
+										<div class="card">
+											<div
+												class="bg-image hover-overlay ripple d-flex"
+												data-mdb-ripple-color="light"
+												style="height: 200px; vertical-align: middle; align-self: center"
+											>
+												<img src="<%=row['Photo link']%>" class="img-fluid" />
+												<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title"><%=row["Name"]%></h5>
+											</div>
+										</div>
+									</a>
+								</div>
+								<% } %> <% }); %>
+							</div>
+
+							<h4 class="mb-5"><strong>Ph.D. Students (Awarded)</strong></h4>
+
+							<div class="row justify-content-center">
+								<% rows.forEach(function(row) { %> <% if (row['Designation'] == "Ph.D. Student" && row['Member Type'] == "Alumni") { %>
 								<div class="col-lg-2 col-md-4 mb-4">
 									<a href="/users/<%=row['UserID']%>">
 										<div class="card">
