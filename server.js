@@ -3,6 +3,9 @@ const express = require("express");
 const router = express.Router();
 const app = express();
 
+const morgan = require("morgan");
+app.use(morgan("tiny"));
+
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
