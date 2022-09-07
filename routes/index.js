@@ -25,7 +25,12 @@ router.get("/", async (req, res) => {
 
 	// read rows
 	const rows = await sheet.getRows(); // can pass in { limit, offset }
-	res.render("pages/index", { rows: rows });
+
+	const sheet2 = doc.sheetsByIndex[7];
+	// read rows
+	const rows2 = await sheet2.getRows(); // can pass in { limit, offset }
+
+	res.render("pages/index", { rows: rows, index: rows2 });
 });
 
 //news page
