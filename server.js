@@ -16,7 +16,7 @@ app.use(express.static(__dirname + "/views"));
 app.use("/", require("./routes/index"));
 app.use("/dataset", require("./routes/dataset"));
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
